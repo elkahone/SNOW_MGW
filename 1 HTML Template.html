@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">My Opened Records</h4>
+  </div>
+  <div class="panel-body m-b-n">
+    <div class="form-group">
+      <h4>Group</h4>
+      <select type="text" class="form-control" ng-model="c.data.team" ng-change="c.onChange()">
+        <option value="">--Select Group--</option>
+        <option ng-repeat="item in c.data.list">{{item}}</option>
+      </select>
+    </div>
+    <div ng-if="c.members" class="panel panel-default" style="padding: 20px">
+      <h4>Team members</h4>
+      <div>
+        <div class="list-group">
+          <a class="list-group-item" ng-repeat="user in c.data.members">{{user}}</a><br>
+          <button ng-click="showActive()" type="button" class="btn btn-success">Who is active ?</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <h4>Records assigned to the group</h4>
+      <div class="list-group">
+        <a href="javascript:void(0)" class="list-group-item" ng-click="showProb()">Problem<span
+            class="badge">{{c.data.problem}}</span></a>
+        <a href="javascript:void(0)" class="list-group-item" ng-click="showReq()">Change Request<span
+            class="badge">{{c.data.request}}</span></a>
+        <a href="javascript:void(0)" class="list-group-item" ng-click="showInc()">Incident<span
+            class="badge">{{c.data.incident}}</span></a>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <div class="list-group" id="tbl">
+      </div>
+      <div class="panel-footer" ng-if="c.amount > c.options.maximum_entries">
+        <h4 class="panel-title">${First {{c.options.maximum_entries}} of {{c.amount}} shown}</h4>
+      </div>
+    </div>
+  </div>
+</div>

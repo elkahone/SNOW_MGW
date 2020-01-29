@@ -1,0 +1,419 @@
+{
+    "instance": {
+        "name": "dev90223",
+        "url": "https://dev90223.service-now.com",
+        "g_ck": "1d3600b22fa20c10a1e72ca62799b63711023c1affbfc4d46874cf81675eea41757550f3"
+    },
+    "action": "saveWidget",
+    "tableName": "sp_widget",
+    "name": "My Groups Work",
+    "sys_id": "a15e37192fe6c010a1e72ca62799b693",
+    "widget": {
+        "template": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Body HTML template",
+            "sys_readonly": false,
+            "type": "html_template",
+            "mandatory": false,
+            "displayValue": "<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h4 class=\"panel-title\">My Opened Records</h4>\n  </div>\n  <div class=\"panel-body m-b-n\">\n    <div class=\"form-group\">\n      <h4>Group</h4>\n      <select type=\"text\" class=\"form-control\" ng-model=\"c.data.team\" ng-change=\"c.onChange()\">\n        <option value=\"\">--Select Group--</option>\n        <option ng-repeat=\"item in c.data.list\">{{item}}</option>\n      </select>\n    </div>\n    <div ng-if=\"c.members\" class=\"panel panel-default\" style=\"padding: 20px\">\n      <h4>Team members</h4>\n      <div>\n        <div class=\"list-group\">\n          <a class=\"list-group-item\" ng-repeat=\"user in c.data.members\">{{user}}</a><br>\n          <button ng-click=\"showActive()\" type=\"button\" class=\"btn btn-success\">Who is active ?</button>\n        </div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <h4>Records assigned to the group</h4>\n      <div class=\"list-group\">\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showProb()\">Problem<span\n            class=\"badge\">{{c.data.problem}}</span></a>\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showReq()\">Change Request<span\n            class=\"badge\">{{c.data.request}}</span></a>\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showInc()\">Incident<span\n            class=\"badge\">{{c.data.incident}}</span></a>\n      </div>\n    </div><br>\n    <div class=\"form-group\">\n      <div class=\"list-group\" id=\"tbl\">\n      </div>\n      <div class=\"panel-footer\" ng-if=\"c.amount > c.options.maximum_entries\">\n        <h4 class=\"panel-title\">${First {{c.options.maximum_entries}} of {{c.amount}} shown}</h4>\n      </div>\n    </div>\n  </div>\n</div>",
+            "readonly": false,
+            "hint": "",
+            "name": "template",
+            "attributes": {},
+            "choice": 0,
+            "value": "<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">\n    <h4 class=\"panel-title\">My Opened Records</h4>\n  </div>\n  <div class=\"panel-body m-b-n\">\n    <div class=\"form-group\">\n      <h4>Group</h4>\n      <select type=\"text\" class=\"form-control\" ng-model=\"c.data.team\" ng-change=\"c.onChange()\">\n        <option value=\"\">--Select Group--</option>\n        <option ng-repeat=\"item in c.data.list\">{{item}}</option>\n      </select>\n    </div>\n    <div ng-if=\"c.members\" class=\"panel panel-default\" style=\"padding: 20px\">\n      <h4>Team members</h4>\n      <div>\n        <div class=\"list-group\">\n          <a class=\"list-group-item\" ng-repeat=\"user in c.data.members\">{{user}}</a><br>\n          <button ng-click=\"showActive()\" type=\"button\" class=\"btn btn-success\">Who is active ?</button>\n        </div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <h4>Records assigned to the group</h4>\n      <div class=\"list-group\">\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showProb()\">Problem<span\n            class=\"badge\">{{c.data.problem}}</span></a>\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showReq()\">Change Request<span\n            class=\"badge\">{{c.data.request}}</span></a>\n        <a href=\"javascript:void(0)\" class=\"list-group-item\" ng-click=\"showInc()\">Incident<span\n            class=\"badge\">{{c.data.incident}}</span></a>\n      </div>\n    </div><br>\n    <div class=\"form-group\">\n      <div class=\"list-group\" id=\"tbl\">\n      </div>\n      <div class=\"panel-footer\" ng-if=\"c.amount > c.options.maximum_entries\">\n        <h4 class=\"panel-title\">${First {{c.options.maximum_entries}} of {{c.amount}} shown}</h4>\n      </div>\n    </div>\n  </div>\n</div>",
+            "max_length": 65000,
+            "ed": {
+                "name": "template"
+            }
+        },
+        "css": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "CSS",
+            "sys_readonly": false,
+            "type": "css",
+            "mandatory": false,
+            "displayValue": ".badge {\r\nbackground-color: green;\r\n}",
+            "readonly": false,
+            "hint": "",
+            "name": "css",
+            "attributes": {},
+            "choice": 0,
+            "value": ".badge {\r\nbackground-color: green;\r\n}",
+            "max_length": 8000,
+            "ed": {
+                "name": "css"
+            }
+        },
+        "roles": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "Roles",
+            "sys_readonly": false,
+            "type": "user_roles",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "roles",
+            "attributes": {
+                "no_truncate": "true",
+                "update_exempt": "true",
+                "record_watcher_blacklist": "true"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 255,
+            "ed": {
+                "name": "roles"
+            }
+        },
+        "link": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Link",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "function link(scope, element, attrs, controller) {\n\n}",
+            "readonly": false,
+            "hint": "",
+            "name": "link",
+            "attributes": {
+                "client_script": "true"
+            },
+            "choice": 0,
+            "value": "function link(scope, element, attrs, controller) {\n\n}",
+            "max_length": 65000,
+            "ed": {
+                "name": "link"
+            }
+        },
+        "description": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Description",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "Defines what the widget does",
+            "name": "description",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 300,
+            "ed": {
+                "name": "description"
+            }
+        },
+        "demo_data": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Demo data",
+            "sys_readonly": false,
+            "type": "json",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "demo_data",
+            "attributes": {},
+            "choice": 0,
+            "value": "",
+            "max_length": 8000,
+            "ed": {
+                "name": "demo_data"
+            }
+        },
+        "option_schema": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Option schema",
+            "sys_readonly": false,
+            "type": "json",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "option_schema",
+            "attributes": {},
+            "choice": 0,
+            "value": "",
+            "max_length": 8000,
+            "ed": {
+                "name": "option_schema"
+            }
+        },
+        "script": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Server script",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "(function () {\n\tif (!options.maximum_entries)\n\t\toptions.maximum_entries = 5;\n\n\tvar tables = [\"problem\", \"incident\", \"change_request\"];\n\n\tdata.list = [];\n\tdata.problems = [];\n\tdata.requests = [];\n\tdata.incidents = [];\n\tdata.members = [];\n\tdata.usrState = [];\n\n\t/* e.g., data.table = $sp.getValue('table'); */\n\t// get all group from table\t\n\tvar gr = new GlideRecord(\"sys_user_grmember\");\n\tgr.addEncodedQuery('userDYNAMIC90d1921e5f510100a9ad2572f2b477fe');\n\tgr.query();\n\twhile (gr.next()) {\n\t\tdata.list.push(gr.getDisplayValue('group'));\n\t}\n\n\t//get members of choosen group\n\tif (input) {\n\t\tif (input.action == \"addMembers\") {\n\t\t\t\n\t\t\tvar grTeam = new GlideRecord(\"sys_user_group\");\n\t\t\tgrTeam.addQuery('name', input.team);\n\t\t\tgrTeam.query();\n\t\t\twhile (grTeam.next()) {\n\t\t\t\tvar teamid = grTeam.getValue('sys_id');\n\t\t\t\ttables.forEach(queryTable, teamid); //get records number assigned to the team ofeach table \n\t\t\t\tgetRecords(teamid); //get records details assigned to the team for each table\n\t\t\t\t\n\t\t\t\tvar usr = new GlideRecord(\"sys_user_grmember\"); //query table to get all team memebers\n\t\t\t\tusr.addQuery('group', teamid);\n\t\t\t\tusr.query();\n\t\t\t\twhile (usr.next()) {\n\t\t\t\t\tdata.members.push(usr.getDisplayValue('user'));\n\t\t\t\t\tvar users = {};\n\t\t\t\t\tvar name = usr.getDisplayValue('user');\n\t\t\t\t\t\n\t\t\t\t\tvar userTable = new GlideRecord('sys_user');\n\t\t\t\t\tuserTable.addQuery('name', name);\n\t\t\t\t\tuserTable.query();\n\t\t\t\t\twhile(userTable.next()) {\n\t\t\t\t\t\tusers.name = name;\n\t\t\t\t\t\tvar userID = userTable.getDisplayValue('user_name');\n\t\t\t\t\t\t\n\t\t\t\t\t\tvar isActive = new GlideRecord('sys_user_session');\n\t\t\t\t\t\tisActive.addEncodedQuery('nameISNOTEMPTY^invalidatedISEMPTY');\n\t\t\t\t\t\tisActive.addQuery('name', userID);\n\t\t\t\t\t\tisActive.query();\n\t\t\t\t\t\tif (isActive.next()) {\n\t\t\t\t\t\tusers.active = 'true';\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tdata.usrState.push(users);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tfunction queryTable(item) {\n\t\tvar id = this.valueOf();\n\t\tgr = new GlideAggregate(item); // query problem table to search all assigned record to the current team\n\t\tgr.addAggregate('COUNT');\n\t\tgr.addQuery('active', 'true');\n\t\tgr.addQuery('assignment_group', id);\n\t\tgr.query();\n\t\tif (gr.next()) {\n\t\t\tswitch (item) {\n\t\t\t\tcase 'problem':\n\t\t\t\t\tdata.problem = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'incident':\n\t\t\t\t\tdata.incident = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'change_request':\n\t\t\t\t\tdata.request = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t}\n\n\t\t}\n\t}\n\n\tfunction getRecords(id) {\n\t\tvar prb = new GlideRecord('problem');\n\t\tprb.addQuery('assignment_group', id);\n\t\tprb.addActiveQuery();\n\t\tprb.query();\n\t\tvar prbIdx = 0;\n\t\twhile (prb.next()) {\n\t\t\tif (prbIdx == options.maximum_entries)\n\t\t\t\tbreak;\n\t\t\tvar prob = {};\n\t\t\tprob.number = prb.getDisplayValue(\"number\");\n\t\t\tprob.short_description = prb.getDisplayValue(\"short_description\");\n\t\t\tprob.state = prb.getDisplayValue(\"state\");\n\t\t\tprob.sys_id = prb.getUniqueValue();\n\t\t\tdata.problems.push(prob);\n\t\t\tprbIdx++;\n\t\t}\n\n\n\t\tvar req = new GlideRecord('change_request');\n\t\treq.addQuery('assignment_group', id);\n\t\treq.addQuery('active', 'true');\n\t\treq.query();\n\t\tvar reqIdx = 0;\n\t\twhile (req.next()) {\n\t\t\tif (reqIdx == options.maximum_entries)\n\t\t\t\tbreak;\n\t\t\tvar requ = {};\n\t\t\trequ.number = req.getDisplayValue(\"number\");\n\t\t\trequ.short_description = req.getDisplayValue(\"short_description\");\n\t\t\trequ.state = req.getDisplayValue(\"state\");\n\t\t\trequ.sys_id = req.getUniqueValue();\n\t\t\tdata.requests.push(requ);\n\t\t\treqIdx++;\n\n\t\t}\n\n\t\tvar inc = new GlideRecord('incident');\n\t\tinc.addQuery('assignment_group', id);\n\t\tinc.addQuery('active', 'true');\n\t\tinc.query();\n\t\tvar incIdx = 0;\n\t\twhile (inc.next()) {\n\t\t\tif (incIdx == options.maximum_entries)\n\t\t\t\tbreak;\n\t\t\tvar inci = {};\n\t\t\tinci.number = inc.getDisplayValue(\"number\");\n\t\t\tinci.short_description = inc.getDisplayValue(\"short_description\");\n\t\t\tinci.state = inc.getDisplayValue(\"state\");\n\t\t\tinci.sys_id = inc.getUniqueValue();\n\t\t\tdata.incidents.push(inci);\n\t\t\tincIdx++;\n\t\t}\n\t}\n\n})();",
+            "readonly": false,
+            "hint": "",
+            "name": "script",
+            "attributes": {},
+            "choice": 0,
+            "value": "(function () {\n\tif (!options.maximum_entries)\n\t\toptions.maximum_entries = 5;\n\n\tvar tables = [\"problem\", \"incident\", \"change_request\"];\n\n\tdata.list = [];\n\tdata.problems = [];\n\tdata.requests = [];\n\tdata.incidents = [];\n\tdata.members = [];\n\tdata.usrState = [];\n\n\t/* e.g., data.table = $sp.getValue('table'); */\n\t// get all group from table\t\n\tvar gr = new GlideRecord(\"sys_user_grmember\");\n\tgr.addEncodedQuery('userDYNAMIC90d1921e5f510100a9ad2572f2b477fe');\n\tgr.query();\n\twhile (gr.next()) {\n\t\tdata.list.push(gr.getDisplayValue('group'));\n\t}\n\n\t//get members of choosen group\n\tif (input) {\n\t\tif (input.action == \"addMembers\") {\n\t\t\t\n\t\t\tvar grTeam = new GlideRecord(\"sys_user_group\");\n\t\t\tgrTeam.addQuery('name', input.team);\n\t\t\tgrTeam.query();\n\t\t\twhile (grTeam.next()) {\n\t\t\t\tvar teamid = grTeam.getValue('sys_id');\n\t\t\t\ttables.forEach(queryTable, teamid); //get records number assigned to the team ofeach table \n\t\t\t\tgetRecords(teamid); //get records details assigned to the team for each table\n\t\t\t\t\n\t\t\t\tvar usr = new GlideRecord(\"sys_user_grmember\"); //query table to get all team memebers\n\t\t\t\tusr.addQuery('group', teamid);\n\t\t\t\tusr.query();\n\t\t\t\twhile (usr.next()) {\n\t\t\t\t\tdata.members.push(usr.getDisplayValue('user'));\n\t\t\t\t\tvar users = {};\n\t\t\t\t\tvar name = usr.getDisplayValue('user');\n\t\t\t\t\t\n\t\t\t\t\tvar userTable = new GlideRecord('sys_user');\n\t\t\t\t\tuserTable.addQuery('name', name);\n\t\t\t\t\tuserTable.query();\n\t\t\t\t\twhile(userTable.next()) {\n\t\t\t\t\t\tusers.name = name;\n\t\t\t\t\t\tvar userID = userTable.getDisplayValue('user_name');\n\t\t\t\t\t\t\n\t\t\t\t\t\tvar isActive = new GlideRecord('sys_user_session');\n\t\t\t\t\t\tisActive.addEncodedQuery('nameISNOTEMPTY^invalidatedISEMPTY');\n\t\t\t\t\t\tisActive.addQuery('name', userID);\n\t\t\t\t\t\tisActive.query();\n\t\t\t\t\t\tif (isActive.next()) {\n\t\t\t\t\t\tusers.active = 'true';\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tdata.usrState.push(users);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tfunction queryTable(item) {\n\t\tvar id = this.valueOf();\n\t\tgr = new GlideAggregate(item); // query problem table to search all assigned record to the current team\n\t\tgr.addAggregate('COUNT');\n\t\tgr.addQuery('active', 'true');\n\t\tgr.addQuery('assignment_group', id);\n\t\tgr.query();\n\t\tif (gr.next()) {\n\t\t\tswitch (item) {\n\t\t\t\tcase 'problem':\n\t\t\t\t\tdata.problem = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'incident':\n\t\t\t\t\tdata.incident = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t\tcase 'change_request':\n\t\t\t\t\tdata.request = gr.getAggregate('COUNT');\n\t\t\t\t\tbreak;\n\t\t\t}\n\n\t\t}\n\t}\n\n\tfunction getRecords(id) {\n\t\tvar prb = new GlideRecord('problem');\n\t\tprb.addQuery('assignment_group', id);\n\t\tprb.addActiveQuery();\n\t\tprb.query();\n\t\tvar prbIdx = 0;\n\t\twhile (prb.next()) {\n\t\t\tif (prbIdx == options.maximum_entries)\n\t\t\t\tbreak;\n\t\t\tvar prob = {};\n\t\t\tprob.number = prb.getDisplayValue(\"number\");\n\t\t\tprob.short_description = prb.getDisplayValue(\"short_description\");\n\t\t\tprob.state = prb.getDisplayValue(\"state\");\n\t\t\tprob.sys_id = prb.getUniqueValue();\n\t\t\tdata.problems.push(prob);\n\t\t\tprbIdx++;\n\t\t}\n\n\n\t\tvar req = new GlideRecord('change_request');\n\t\treq.addQuery('assignment_group', id);\n\t\treq.addQuery('active', 'true');\n\t\treq.query();\n\t\tvar reqIdx = 0;\n\t\twhile (req.next()) {\n\t\t\tif (reqIdx == options.maximum_entries)\n\t\t\t\tbreak;\n\t\t\tvar requ = {};\n\t\t\trequ.number = req.getDisplayValue(\"number\");\n\t\t\trequ.short_description = req.getDisplayValue(\"short_description\");\n\t\t\trequ.state = req.getDisplayValue(\"state\");\n\t\t\trequ.sys_id = req.getUniqueValue();\n\t\t\tdata.requests.push(requ);\n\t\t\treqIdx++;\n\n\t\t}\n\n\t\tvar inc = new GlideRecord('incident');\n\t\tinc.addQuery('assignment_group', id);\n\t\tinc.addQuery('active', 'true');\n\t\tinc.query();\n\t\tvar incIdx = 0;\n\t\twhile (inc.next()) {\n\t\t\tif (incIdx == options.maximum_entries)\n\t\t\t\tbreak;\n\t\t\tvar inci = {};\n\t\t\tinci.number = inc.getDisplayValue(\"number\");\n\t\t\tinci.short_description = inc.getDisplayValue(\"short_description\");\n\t\t\tinci.state = inc.getDisplayValue(\"state\");\n\t\t\tinci.sys_id = inc.getUniqueValue();\n\t\t\tdata.incidents.push(inci);\n\t\t\tincIdx++;\n\t\t}\n\t}\n\n})();",
+            "max_length": 65000,
+            "ed": {
+                "name": "script"
+            }
+        },
+        "has_preview": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -7,
+            "label": "Has preview",
+            "sys_readonly": false,
+            "type": "boolean",
+            "mandatory": false,
+            "displayValue": "true",
+            "readonly": false,
+            "hint": "Defines whether preview data is available",
+            "name": "has_preview",
+            "attributes": {},
+            "choice": 0,
+            "value": "true",
+            "max_length": 40,
+            "ed": {
+                "name": "has_preview"
+            }
+        },
+        "public": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -7,
+            "label": "Public",
+            "sys_readonly": false,
+            "type": "boolean",
+            "mandatory": false,
+            "displayValue": "false",
+            "readonly": false,
+            "hint": "Widget publicly available to unauthenticated users",
+            "name": "public",
+            "attributes": {
+                "update_exempt": "true"
+            },
+            "choice": 0,
+            "value": "false",
+            "max_length": 40,
+            "ed": {
+                "name": "public"
+            }
+        },
+        "docs": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "Docs",
+            "sys_readonly": false,
+            "type": "reference",
+            "mandatory": false,
+            "refTable": "sp_documentation",
+            "reference_type": "table",
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "docs",
+            "attributes": {
+                "encode_utf8": "false"
+            },
+            "reference_key": "sys_id",
+            "readonlyClickthrough": false,
+            "choice": 0,
+            "value": "",
+            "max_length": 32,
+            "ed": {
+                "reference": "sp_documentation",
+                "searchField": "title",
+                "defaultOperator": "STARTSWITH",
+                "name": "docs"
+            }
+        },
+        "client_script": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": -1,
+            "label": "Client controller",
+            "sys_readonly": false,
+            "type": "script",
+            "mandatory": false,
+            "displayValue": "function($scope) {\n  /* widget controller */\n  var c = this;\n\t\n\tc.onChange = function() {\n\t\tc.members = true;\n\t\t$(\"#tbl a\").remove();\n\t\t$(\"#title\").show();\n\t\tc.data.action = \"addMembers\";\n\t\tc.server.update().then(function() {\n\t\t\tc.data.action = undefined;\n\t\t})\n\t};\n\t\n\t$scope.showProb = function()  {\n\t\tc.amount = c.data.problem;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.problem; i++) {\n\t\t\t\t\tc.number = $scope.data.problems[i].number;\n\t\t\t\t\tc.short_description = $scope.data.problems[i].short_description\n\t\t\t\t\tc.sys_id = $scope.data.problems[i].sys_id;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+c.sys_id+\"&view=sp&id=ticket&table=problem' class='list-group-item'>\"+c.number+\"<span> • </span>\"+c.short_description+\"</a>\");\n\t\t}\t\n\t};\n\t\n\t$scope.showReq = function()  {\n\t\tc.amount = c.data.request;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.request; i++) {\n\t\t\t\t\tc.number = $scope.data.requests[i].number;\n\t\t\t\t\tc.sys_id = $scope.data.requests[i].sys_id;\n\t\t\t\t\tc.short_description = $scope.data.requests[i].short_description;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+c.sys_id+\"&view=sp&id=ticket&table=change_request' class='list-group-item'>\"+c.number+\"<span> • </span>\"+c.short_description+\"</a>\")\n\t\t}\t\n\t};\n\t\n\t$scope.showInc = function()  {\n\t\tc.amount = c.data.incident;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.incident; i++) {\n\t\t\t\t\tc.number = $scope.data.incidents[i].number;\n\t\t\t\t\tc.sys_id = $scope.data.incidents[i].sys_id;\n\t\t\t\t\tc.short_description = $scope.data.incidents[i].short_description;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+c.sys_id+\"&view=sp&id=ticket&table=incident' class='list-group-item'>\"+c.number+\"<span> • </span>\"+c.short_description+\"</a>\")\n\t\t}\t\n\t};\n\t\n\t$scope.showActive = function() {\n\t\tfor( var i = 0; i < $scope.data.usrState.length; i++) {\n\t\t\tc.userStatus = $scope.data.usrState[i].active;\n\t\t\tconsole.log(c.userStatus);\n\t\t\tc.userName = $scope.data.usrState[i].name;\n\t\t\tconsole.log(c.userName);\n\t\t\tif(c.userStatus == 'true') {\n\t\t\t $(\"a:contains('\"+c.userName+\"')\").css(\"background-color\", \"lightgreen\");\n\t\t\t}\n\t\t}\n\t};\n\n}",
+            "readonly": false,
+            "hint": "",
+            "name": "client_script",
+            "attributes": {
+                "client_script": "true"
+            },
+            "choice": 0,
+            "value": "function($scope) {\n  /* widget controller */\n  var c = this;\n\t\n\tc.onChange = function() {\n\t\tc.members = true;\n\t\t$(\"#tbl a\").remove();\n\t\t$(\"#title\").show();\n\t\tc.data.action = \"addMembers\";\n\t\tc.server.update().then(function() {\n\t\t\tc.data.action = undefined;\n\t\t})\n\t};\n\t\n\t$scope.showProb = function()  {\n\t\tc.amount = c.data.problem;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.problem; i++) {\n\t\t\t\t\tc.number = $scope.data.problems[i].number;\n\t\t\t\t\tc.short_description = $scope.data.problems[i].short_description\n\t\t\t\t\tc.sys_id = $scope.data.problems[i].sys_id;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+c.sys_id+\"&view=sp&id=ticket&table=problem' class='list-group-item'>\"+c.number+\"<span> • </span>\"+c.short_description+\"</a>\");\n\t\t}\t\n\t};\n\t\n\t$scope.showReq = function()  {\n\t\tc.amount = c.data.request;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.request; i++) {\n\t\t\t\t\tc.number = $scope.data.requests[i].number;\n\t\t\t\t\tc.sys_id = $scope.data.requests[i].sys_id;\n\t\t\t\t\tc.short_description = $scope.data.requests[i].short_description;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+c.sys_id+\"&view=sp&id=ticket&table=change_request' class='list-group-item'>\"+c.number+\"<span> • </span>\"+c.short_description+\"</a>\")\n\t\t}\t\n\t};\n\t\n\t$scope.showInc = function()  {\n\t\tc.amount = c.data.incident;\n\t\t$(\"#tbl a\").remove();\n\t\tfor(var i = 0; i < c.data.incident; i++) {\n\t\t\t\t\tc.number = $scope.data.incidents[i].number;\n\t\t\t\t\tc.sys_id = $scope.data.incidents[i].sys_id;\n\t\t\t\t\tc.short_description = $scope.data.incidents[i].short_description;\n\t\t\t\t\t$(\"#tbl\").append(\"<a href='?sys_id=\"+c.sys_id+\"&view=sp&id=ticket&table=incident' class='list-group-item'>\"+c.number+\"<span> • </span>\"+c.short_description+\"</a>\")\n\t\t}\t\n\t};\n\t\n\t$scope.showActive = function() {\n\t\tfor( var i = 0; i < $scope.data.usrState.length; i++) {\n\t\t\tc.userStatus = $scope.data.usrState[i].active;\n\t\t\tconsole.log(c.userStatus);\n\t\t\tc.userName = $scope.data.usrState[i].name;\n\t\t\tconsole.log(c.userName);\n\t\t\tif(c.userStatus == 'true') {\n\t\t\t $(\"a:contains('\"+c.userName+\"')\").css(\"background-color\", \"lightgreen\");\n\t\t\t}\n\t\t}\n\t};\n\n}",
+            "max_length": 8000,
+            "ed": {
+                "name": "client_script"
+            }
+        },
+        "data_table": {
+            "sys_mandatory": true,
+            "visible": true,
+            "dbType": 12,
+            "default_value": "sp_instance",
+            "label": "Data table",
+            "sys_readonly": false,
+            "type": "table_name",
+            "mandatory": true,
+            "displayValue": "sp_instance",
+            "readonly": false,
+            "hint": "",
+            "name": "data_table",
+            "attributes": {
+                "base_table": "sp_instance",
+                "base_start": "true"
+            },
+            "choice": 0,
+            "choices": [],
+            "value": "sp_instance",
+            "max_length": 80,
+            "ed": {
+                "name": "data_table"
+            }
+        },
+        "name": {
+            "sys_mandatory": true,
+            "visible": true,
+            "dbType": 12,
+            "label": "Name",
+            "sys_readonly": false,
+            "type": "translated_field",
+            "mandatory": true,
+            "displayValue": "My Groups Work",
+            "readonly": false,
+            "hint": "",
+            "name": "name",
+            "attributes": {},
+            "choice": 0,
+            "value": "My Groups Work",
+            "max_length": 40,
+            "ed": {
+                "name": "name"
+            }
+        },
+        "sys_scope": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "Application",
+            "sys_readonly": true,
+            "type": "reference",
+            "mandatory": false,
+            "refTable": "sys_scope",
+            "reference_type": "table",
+            "displayValue": "Global",
+            "readonly": true,
+            "hint": "Application containing this record",
+            "name": "sys_scope",
+            "attributes": {
+                "encode_utf8": "false",
+                "list_force_default": "true",
+                "readonly_clickthrough": "true",
+                "ignore_filter_on_new": "true"
+            },
+            "reference_key": "sys_id",
+            "readonlyClickthrough": true,
+            "choice": 0,
+            "value": "global",
+            "max_length": 32,
+            "ed": {
+                "reference": "sys_scope",
+                "searchField": "name",
+                "defaultOperator": "STARTSWITH",
+                "name": "sys_scope"
+            }
+        },
+        "id": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "ID",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "Identifier for $sp.embedWidget()",
+            "name": "id",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 40,
+            "ed": {
+                "name": "id"
+            }
+        },
+        "field_list": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dependentField": "data_table",
+            "dbType": -1,
+            "label": "Fields",
+            "sys_readonly": false,
+            "type": "field_list",
+            "mandatory": false,
+            "displayValue": "",
+            "readonly": false,
+            "hint": "",
+            "name": "field_list",
+            "attributes": {
+                "is_multi_text": "false"
+            },
+            "choice": 0,
+            "value": "",
+            "max_length": 1000,
+            "ed": {
+                "dependent_value": "sp_instance",
+                "name": "field_list"
+            }
+        },
+        "controller_as": {
+            "sys_mandatory": false,
+            "visible": true,
+            "dbType": 12,
+            "label": "controllerAs",
+            "sys_readonly": false,
+            "type": "string",
+            "mandatory": false,
+            "displayValue": "c",
+            "readonly": false,
+            "hint": "Identifier name for a reference to the controller in the directive's scope",
+            "name": "controller_as",
+            "attributes": {
+                "edge_encryption_enabled": "true"
+            },
+            "choice": 0,
+            "value": "c",
+            "max_length": 100,
+            "ed": {
+                "name": "controller_as"
+            }
+        }
+    }
+}
