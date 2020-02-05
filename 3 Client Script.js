@@ -1,17 +1,17 @@
 function($scope) {
   /* widget controller */
   var c = this;
-	
+	//client controler send info that button clicked to the server side
 	c.onChange = function() {
 		c.members = true;
-		$("#tbl a").remove();
-		$("#title").show();
+		$("#tbl a").remove(); //clear table content after value of dropdown list changed
+		$("#title").show(); //add titile after reload the list
 		c.data.action = "addMembers";
 		c.server.update().then(function() {
 			c.data.action = undefined;
 		})
 	};
-	
+	// list-item click function get all record with the amount from particular table
 	$scope.showProb = function()  {
 		c.amount = c.data.problem;
 		$("#tbl a").remove();
@@ -44,7 +44,7 @@ function($scope) {
 					$("#tbl").append("<a href='?sys_id="+c.sys_id+"&view=sp&id=ticket&table=incident' class='list-group-item'>"+c.number+"<span> • </span>"+c.short_description+"</a>")
 		}	
 	};
-	
+	// hilight current online team member
 	$scope.showActive = function() {
 		for( var i = 0; i < $scope.data.usrState.length; i++) {
 			c.userStatus = $scope.data.usrState[i].active;
